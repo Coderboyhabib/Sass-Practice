@@ -1,0 +1,50 @@
+@import 'reset.scss';
+
+
+$font-size: 16px;
+$font-weight: normal;
+$font-family: tahoma;
+$font-color: 000;
+$line-height: 1.5em;
+
+%section {
+    padding: 50px 0px;
+    margin: 5;
+    font-size: $font-size;
+    color: $font-color;
+    width: 100%;
+    margin: auto;
+}
+
+@mixin grd($color, $color2, $color3) {
+    background: -ms-linear-gradient($color, $color2, $color3);
+    background: -webkit-linear-gradient($color, $color2, $color3);
+    background: linear-gradient($color, $color2, $color3);
+}
+
+nav {
+
+    @include grd(red, orange, green);
+
+    ul {
+        margin: 0%;
+
+        li {
+            list-style: none;
+
+            a {
+                text-decoration: none;
+                display: block;
+                padding: 10px 20px;
+                color: $font-color;
+            }
+        }
+    }
+}
+
+.test-section {
+    @extend %section;
+    .s {
+        color: orange;
+    }
+}
